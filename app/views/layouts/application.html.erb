@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Burstcreations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% stylesheet_link_tag "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
+    <% stylesheet_link_tag "http://fonts.googleapis.com/css?family=Averia+Sans+Libre|Lilita+One|Dosis|Oleo+Script|Yesteryear|Gabriela" %>
+    <%= stylesheet_link_tag  "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <% if flash[:notice] %>
+       <p style="background-color: green"><%= flash[:notice] %></p>
+      <% end %>
+
+      <% if flash[:error] %>
+       <p style="background-color: red"><%= flash[:error] %></p>
+      <% end %>
+
+      <nav id="primary" class="row-fluid">
+        <h1 class="span12 title text-center"><a href="<%= url_for :root %>">Burstcreations</a></h1>
+      </nav>
+
+      <section id="content" class="row-fluid">
+        <div class="span12">          
+          <%= yield %>
+        </div>
+      </section>
+    </div>
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
