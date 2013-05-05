@@ -60,6 +60,6 @@ module Burstcreations2013
     config.assets.version = '1.0'
 
     # Ember configs
-    config.handlebars.templates_root = 'templates'
+    #config.handlebars.templates_root = 'templates'
   end
 end

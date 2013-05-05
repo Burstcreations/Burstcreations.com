@@ -1,4 +1,6 @@
 Burstcreations2013::Application.routes.draw do
+  devise_for :admins
+
   get 'messages/create'
   get 'messages' => 'messages#index'
   post 'messages' => 'messages#new'
