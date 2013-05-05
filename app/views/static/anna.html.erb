@@ -1,3 +1,7 @@
+<%= content_for :body_setup do %>
+  data-spy="scroll" data-target=".navbar"
+<% end %>
+
 <div class="row-fluid">
   <div class="span3 text-center">
     <h2>
@@ -18,7 +22,6 @@
   <div class="span12 pad2">
     <div class="navbar navbar-inverse">
       <div class="navbar-inner">
-<!--                     <a class="brand" href="#">Anna</a> -->
         <ul class="nav">
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#services">Services</a></li>
@@ -148,11 +151,17 @@
 
     <section id="contact-me" class="nav-section">
       <h5>Contact Me</h5>
-      <form accept-charset="UTF-8" action="/messages" method="post">
-        <input type="text" name="message[name]" placeholder="Name">
-        <input type="text" name="message[email]" placeholder="Email">
-        <textarea name="message[message]" cols="30" rows="10" placeholder="Message"></textarea>
-        <button type="submit">Send</button>
+      <form class="row-fluid" accept-charset="UTF-8" action="/messages" method="post">
+        <div class="span4">
+          <input class="input-block-level" type="text" name="message[name]" placeholder="Name">
+          <input class="input-block-level" type="text" name="message[email]" placeholder="Email">  
+          <input class="input-block-level" type="text" name="message[website]" placeholder="Website">
+        </div>
+
+        <div class="span8">
+          <textarea class="input-block-level" name="message[message]" placeholder="Message" rows="5"></textarea>
+          <button class="btn btn-primary pull-right" type="submit">Send</button>
+        </div>        
       </form>
     </section>
 
@@ -194,3 +203,18 @@
     </section>
   </div>
 </div>
+
+
+<% content_for :scripts do %>
+  <script>
+    $(document).ready(function () {
+      $(".alert").alert();
+      $(".navbar").scrollspy({
+        offset: 150
+      });
+      $(".navbar").affix({
+        offset: $(".navbar").position()
+      });
+    });
+  </script>
+<% end %>

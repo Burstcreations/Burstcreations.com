@@ -4,21 +4,27 @@
     <title>Burstcreations</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <% stylesheet_link_tag "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
-    <% stylesheet_link_tag "http://fonts.googleapis.com/css?family=Averia+Sans+Libre|Lilita+One|Dosis|Oleo+Script|Yesteryear|Gabriela" %>
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Averia+Sans+Libre|Lilita+One|Dosis|Oleo+Script|Yesteryear|Gabriela" %>
+    <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
     <%= stylesheet_link_tag  "application", :media => "all" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body <%= yield :body_setup %>>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <span class="notice"><%= flash[:notice] %></span>
+      </div>
+    <% end %>
+
+    <% if flash[:error] %>
+      <div class="alert alert-error">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       <span class="notice"><%= flash[:error] %></span>
+      </div>
+    <% end %>
+
     <div class="container">
-      <% if flash[:notice] %>
-       <p style="background-color: green"><%= flash[:notice] %></p>
-      <% end %>
-
-      <% if flash[:error] %>
-       <p style="background-color: red"><%= flash[:error] %></p>
-      <% end %>
-
       <nav id="primary" class="row-fluid">
         <h1 class="span12 title text-center"><a href="<%= url_for :root %>">Burstcreations</a></h1>
       </nav>
@@ -31,5 +37,7 @@
     </div>
 
     <%= javascript_include_tag "application" %>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <%= yield :scripts %>
   </body>
 </html>
