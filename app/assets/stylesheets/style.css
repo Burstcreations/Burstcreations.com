@@ -155,3 +155,15 @@ ul.nal li {
 #bio {
     padding-top: 3em;
 }
+
+.auth-widget {
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.alert {
+  margin: 0 auto;
+  width: 60%;
+}

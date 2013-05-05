@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:new]
+
   def index
     @messages = Message.all
 

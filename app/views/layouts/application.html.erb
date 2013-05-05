@@ -24,6 +24,13 @@
       </div>
     <% end %>
 
+    <% if admin_signed_in? %>
+      <span class="muted auth-widget">
+        Signed in as <%= current_admin.email %>.
+        <%= link_to 'Sign out', destroy_admin_session_path, :method => :delete %>
+      </span>      
+    <% end %>
+
     <div class="container">
       <nav id="primary" class="row-fluid">
         <h1 class="span12 title text-center"><a href="<%= url_for :root %>">Burstcreations</a></h1>
