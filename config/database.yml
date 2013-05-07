@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: bc_pg_db
   pool: 5
+  username: bc_test
+  password: bc_ptest
   timeout: 5000
