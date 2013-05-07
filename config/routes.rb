@@ -1,15 +1,17 @@
 Burstcreations2013::Application.routes.draw do
+
   devise_for :admins
 
-  get 'messages/create'
-  get 'messages' => 'messages#index'
-  post 'messages' => 'messages#new'
-
-  get 'static/index'
   get 'anna' => 'static#anna'
   get 'ilya' => 'static#ilya'
 
+  get 'admin' => 'admin/dashboard#index'
+
   root :to => 'static#index'
+
+  namespace :admin do
+    resources :availabilities, :messages, :dashboard
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

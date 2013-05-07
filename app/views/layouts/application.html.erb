@@ -27,7 +27,11 @@
     <% if admin_signed_in? %>
       <span class="muted auth-widget">
         Signed in as <%= current_admin.email %>.
-        <%= link_to 'Sign out', destroy_admin_session_path, :method => :delete %>
+        <span>
+          <%= link_to 'Dashboard', admin_dashboard_index_path %>
+           | 
+          <%= link_to 'Sign out', destroy_admin_session_path, :method => :delete %>
+        </span>
       </span>      
     <% end %>
 
