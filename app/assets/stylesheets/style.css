@@ -1,0 +1,173 @@
+body {
+  font-size: 16px;
+  padding-top: 50px;
+}
+
+h2,
+h5 {
+  font-weight: normal;
+  font-family: 'Gabriela', serif;
+}
+
+h5 {
+  font-size: 1.8em;
+}
+
+h6 {
+  margin-top: 1.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+p {
+  font-size: 1.05em;
+  max-width: 40em;
+}
+
+p.more {
+  margin-top: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+.container, #content {
+  margin-top: 5em;
+}
+
+a img:hover {
+  opacity: 1;
+}
+
+a img {
+  opacity: .7;
+  background-color: #eee;
+  transition: opacity .5s;
+}
+
+/** {
+  box-sizing: border-box;
+}*/
+
+ul {
+  margin-left: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+nav .title {
+  font-size: 7em;
+  color: #888;
+  font-weight: normal;
+  /*font-family: 'Averia Sans Libre', cursive;*/
+  /*font-family: 'Dosis', sans-serif;*/
+  /*font-family: 'Oleo Script', cursive;*/
+  font-family: 'Yesteryear', cursive;
+}
+
+.title a {
+  text-decoration: none;
+}
+
+.text-center {
+  transition: .5s;
+  color: #666;
+  font-size: 1.2em;
+}
+
+.bio {
+  font-size: 1.2em;
+}
+
+.affix { 
+  top: 0; 
+  left: 0;
+  right: 0;
+  width: auto;
+  z-index: 100;
+}
+
+.pad2 {
+  padding-top: 2.5em;
+}
+
+.affix .navbar-inner {
+  border-radius: 0;
+}
+
+.offset-half {
+  margin-left: 5%;
+}
+
+.offset-half-vert {
+  margin-top: 5%;
+}
+
+.offset1-vert {
+  margin-top: 12%;
+}
+
+section.last {
+  margin-bottom: 100%;
+}
+
+ul.list {
+  margin: 1.2em 0;
+}
+
+ul.list li {
+  list-style-type: disc;
+  margin-left: 3%;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+ul.testimonials li {
+  margin-bottom: 1.5em;
+}
+
+ol.list li {
+  font-size: 1.05em;
+  max-width: 40em;
+  margin-bottom: 0.5em;
+}
+
+section.nav-section {
+  padding-top: 120px;
+  width: 100%;
+}
+
+.nav-section.first {
+  margin-top: 5%;
+}
+
+ul.nal li {
+  display: block;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav li.pull-right {
+  float: right !important;
+}
+
+#bio {
+    padding-top: 3em;
+}
+
+.auth-widget {
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.alert {
+  margin: 0 auto;
+  width: 60%;
+}

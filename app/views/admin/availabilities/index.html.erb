@@ -1,0 +1,10 @@
+<h1>Availability</h1>
+<%= link_to 'New', new_admin_availability_path %>
+
+<% @availabilities.each do |availability| %>
+  <ul>
+    <li>Date: <%= availability.date %></li>
+    <li>Time: <%= availability.time %></li>
+    <li>Enabled: <%= availability.enabled %></li>
+  </ul>
+<% end %>

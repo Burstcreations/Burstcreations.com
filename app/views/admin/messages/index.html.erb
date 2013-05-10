@@ -1,0 +1,11 @@
+<h4>Messages</h4>
+
+<% @messages.each do |message| %>
+  <ul>
+    <li>Name: <%= message.name %></li>
+    <li>Email: <%= message.email %></li>
+    <li>Message: <%= message.message %></li>
+  </ul>
+<% end %>
+
+
