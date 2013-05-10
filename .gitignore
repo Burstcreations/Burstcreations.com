@@ -16,4 +16,4 @@
 
 # Ignore system files
 nohup.out
-.DSStore
+.DS_Store
