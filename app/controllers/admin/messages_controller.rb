@@ -1,8 +1,8 @@
 class Admin::MessagesController < ApplicationController
   before_filter :authenticate_admin!, :except => [:new, :create]
 
-  def index
-    @messages = Message.all
+  def index    
+    @messages = current_admin.messages.all
 
     respond_to do |format|
       format.html # index.html.erb
