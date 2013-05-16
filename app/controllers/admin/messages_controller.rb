@@ -14,12 +14,14 @@ class Admin::MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    puts params[:userid]
+    @admin = Admin.find(params[:userid])
+    @message = @admin.messages.create(params[:message])
 
     if @message.save
       flash[:notice] = "Message sent successfully! Thank you!"
     else
-      flash[:error] = "Unable to send your message. Please let me know of the issue via Twitter."
+      flash[:error] = "Unable to send your message."
     end
 
     redirect_to :back

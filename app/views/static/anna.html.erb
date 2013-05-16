@@ -157,7 +157,8 @@
 
     <section id="contact-me" class="nav-section">
       <h5>Contact Me</h5>
-      <form class="row-fluid" accept-charset="UTF-8" action="/admin/messages" method="post">
+      <%= form_tag({:controller => "admin/messages", :action => "create"}, :method => "post", :class => "row-fluid") %>
+      <!-- <form class="row-fluid" accept-charset="UTF-8" action="/admin/messages" method="post"> -->
         <div class="span4">
           <input class="input-block-level" type="text" name="message[name]" placeholder="Name">
           <input class="input-block-level" type="text" name="message[email]" placeholder="Email">  
@@ -166,6 +167,7 @@
 
         <div class="span8">
           <textarea class="input-block-level" name="message[message]" placeholder="Message" rows="5"></textarea>
+          <input type="hidden" name="userid" value="<%= @id %>">
           <button class="btn btn-primary pull-right" type="submit">Send</button>
         </div>        
       </form>
