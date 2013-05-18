@@ -1,0 +1,110 @@
+<%= content_for :body_setup do %>
+  data-spy="scroll" data-target=".navbar"
+<% end %>
+
+<div class="row-fluid">
+  <div class="span3 text-center">
+    <h2>
+      <%= image_tag "ilyaface.jpg", { :height => 300, :width => 200, :class => "img-circle", :alt => "Ilya" } %>
+    </h2>
+  </div>
+
+  <div id="bio" class="span8 offset-half">
+    <h2>Hello!</h2>
+
+    <p class="bio">
+      My name is Ilya, and I’m a web designer/developer with a passion for solving real problems using the internet.  At fourteen, I started teaching myself HTML, and from there I’ve grown and immersed myself in other disciplines (JavaScript, Java, C#, Ruby, SQL, and more).  I have a Bachelor of Science in Computer Science from Eastern Connecticut State University, and work full-time as a Web and Mobile Mapping Developer in Boston.   If you’re a small business owner, or thinking of becoming one, I’d love to help you expand your web presence through design and development.
+    </p>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12 pad2">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Previous Projects</a></li>
+          <li><a href="#contact-me">Contact</a></li>
+          <li class="pull-right hidden"><a href="#">Top</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="services" class="nav-section">
+      <h5>My Services</h5>
+
+      <ul class="list">
+        <li>Logo Design</li>
+        <li>Blog/CMS Customization</li>
+        <li>Responsive Web Design</li>
+        <li>Web Map Applications</li>
+      </ul>
+
+      <p>Don't see what you're looking for listed above? Just ask!</p>
+
+      <p class="more">
+        *For virtual assistance, <%= link_to "Click here", anna_path %>.
+      </p>
+    </section>
+
+    <section id="projects" class="nav-section">
+      <h5>Previous Projects</h5>
+
+      <ul class="list incognito">
+        <li>
+          <a href="http://plugovoy.com">Plugovoy Photography</a>
+          <p>
+            Created a new <a href="http://wordpress.org/">WordPress</a> theme based off of one of the default themes. This project included several revisions, until we had it just the way we wanted.
+          </p>
+        </li>
+
+        <li>
+          <a href="http://blueflashphotography.com">Blueflash Photography</a>
+          <p>
+            I helped Matt get his <a href="http://wordpress.org/">WordPress</a> theme customized. From replacing the image thumbnail functionality, to styling and fleshing out the blog section. I also worked on customizing his <a href="http://www.smugmug.com/">SmugMug</a> page, so that it looks as close to his site as possible.
+          </p>
+        </li>
+
+        <li>
+          <a href="http://detectablewarningproducts.com/">Detectable Warning Products</a>
+          <p>
+            DWP is a small business focused on distributing safety tiles. This is a static site, which I designed and implemented for Detectable Warnng Products, replacing their old site.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact-me" class="nav-section last">
+      <h5>Contact Me</h5>
+      <%= form_tag({:controller => "admin/messages", :action => "create"}, :method => "post", :class => "row-fluid") %>
+        <div class="span4">
+          <input class="input-block-level" type="text" name="message[name]" placeholder="Name">
+          <input class="input-block-level" type="text" name="message[email]" placeholder="Email">  
+          <input class="input-block-level" type="text" name="message[website]" placeholder="Website">
+        </div>
+
+        <div class="span8">
+          <textarea class="input-block-level" name="message[message]" placeholder="Message" rows="5"></textarea>
+          <input type="hidden" name="userid" value="<%= @id %>">
+          <button class="btn btn-primary pull-right" type="submit">Send</button>
+        </div>        
+      </form>
+    </section>
+  </div>
+</div>
+
+
+<% content_for :scripts do %>
+  <script>
+    $(document).ready(function () {
+      $(".alert").alert();
+      $(".navbar").scrollspy({
+        offset: 150
+      });
+      $(".navbar").affix({
+        offset: $(".navbar").position()
+      });
+    });
+  </script>
+<% end %>

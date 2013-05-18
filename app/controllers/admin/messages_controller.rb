@@ -14,7 +14,6 @@ class Admin::MessagesController < ApplicationController
   end
 
   def create
-    puts params[:userid]
     @admin = Admin.find(params[:userid])
     @message = @admin.messages.create(params[:message])
 

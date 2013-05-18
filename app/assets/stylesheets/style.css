@@ -24,6 +24,11 @@ p {
   max-width: 40em;
 }
 
+p a {
+  font-size: 1em;
+  color: #34495e;
+}
+
 p.more {
   margin-top: 1.5em;
 }
