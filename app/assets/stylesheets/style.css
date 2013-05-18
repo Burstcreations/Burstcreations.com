@@ -73,6 +73,10 @@ nav .title {
   font-family: 'Yesteryear', cursive;
 }
 
+.nav .connect a {
+  display: inline-block;
+}
+
 .title a {
   text-decoration: none;
 }
