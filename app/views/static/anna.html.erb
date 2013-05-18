@@ -29,13 +29,13 @@
           <li><a href="#contact-me">Contact</a></li>
           <li><a href="#purchase-hours">Purchase Hours</a></li>
           <li class="pull-right connect">
-            <a href="https://twitter.com/burstcreations">
+            <a href="https://twitter.com/burstcreations" target="_blank">
               <i class="icon-twitter"></i>
             </a>
-            <a href="https://facebook.com/burstcreations">
+            <a href="https://facebook.com/burstcreations" target="_blank">
               <i class="icon-facebook"></i>
             </a>
-            <a href="mailto:<%= @email %>">
+            <a href="mailto:<%= @email %>" target="_blank">
               <i class="icon-envelope-alt"></i>
             </a>
           </li>
@@ -50,7 +50,7 @@
 	<li>
                 “...She’s always <strong>upbeat, inspirational</strong> and <strong>eager to help</strong> in any way!...” <p class="pull-right">
                 -Bonnie Christine,
-                <a href="http://www.goinghometoroost.com">Going Home to Roost</a>
+                <a href="http://www.goinghometoroost.com" target="_blank">Going Home to Roost</a>
 </p>
         </li>
         <li>
@@ -89,10 +89,14 @@
         <li>Basic blog maintenance (adding pages, widgets, plug ins, etc.)</li>
       </ul>
 
-      <p>Don't see what you're looking for listed above? Just ask!</p>
+      <p>
+        Don't see what you're looking for listed above? 
+        <a href="#contact-me">Just ask!</a>
+      </p>
 
       <p class="more">
-        *For web design/development, <%= link_to "see Ilya", ilya_path %>.
+        *For web design/development, 
+        <%= link_to "see Ilya", ilya_path %>.
       </p>
     </section>
 
