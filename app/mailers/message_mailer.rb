@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  default from: "no-reply@burstcreations.com"
+  default :from => "no-reply@burstcreations.com"
 
   def message_email(admin, message)
     @admin = admin
