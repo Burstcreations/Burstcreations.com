@@ -18,6 +18,7 @@ class Admin::MessagesController < ApplicationController
     @message = @admin.messages.create(params[:message])
 
     if @message.save
+      MessageMailer.message_email(@admin, @message).deliver
       flash[:notice] = "Message sent successfully! Thank you!"
     else
       flash[:error] = "Unable to send your message."
