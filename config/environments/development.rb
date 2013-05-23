@@ -39,4 +39,5 @@ Burstcreations2013::Application.configure do
   #config.ember.variant = :development
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.raise_delivery_errors = true
 end
