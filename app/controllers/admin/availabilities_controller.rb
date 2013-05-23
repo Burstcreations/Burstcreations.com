@@ -2,7 +2,7 @@ class Admin::AvailabilitiesController < ApplicationController
   before_filter :authenticate_admin!, :except => [:index]
 
   def index
-    @availabilities = Availability.all
+    @availabilities = current_admin.availabilities.all
   end
 
   def new
@@ -10,7 +10,7 @@ class Admin::AvailabilitiesController < ApplicationController
   end
 
   def create 
-    @availability = Availability.new(params[:availability])
+    @availability = current_admin.availabilities.create(params[:availability])
 
     if @availability.save
       flash[:notice] = "Availability saved successfully!"

@@ -1,7 +1,5 @@
 <%= form_for @availability, :url => { :action => "create" } do |f| %>
-<%= date_select("user", "birthday", :order => [:month, :day]) %>
-  <%= f.text_field :date, :placeholder => "Date", :class => "input-block-level" %>
-  <%= f.text_field :time,  :placeholder => "Time", :class => "input-block-level" %>
+  <%= date_select(:availability, :date, :order => [:month, :day]) %>
   <%= f.label :enabled,  :value => "Enabled" %>
   <%= f.check_box :enabled, :checked => true %>
   <%= f.submit "Create", :class => "btn btn-primary"%>

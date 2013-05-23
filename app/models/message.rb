@@ -5,5 +5,5 @@ class Message < ActiveRecord::Base
   validates :email, :presence => true
   validates :message, :presence => true
 
-  #belongs_to :admin
+  belongs_to :admin
 end
