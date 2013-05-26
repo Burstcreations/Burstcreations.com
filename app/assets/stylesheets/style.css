@@ -29,6 +29,10 @@ p a {
   color: #34495e;
 }
 
+label.inline {
+  display: inline-block;
+}
+
 p.more {
   margin-top: 1.5em;
 }

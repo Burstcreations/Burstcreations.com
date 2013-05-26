@@ -1,5 +1,5 @@
 class Availability < ActiveRecord::Base
-  attr_accessible :date, :enabled, :time
+  attr_accessible :available, :enabled
 
   belongs_to :admin
 end

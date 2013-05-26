@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511002110) do
+ActiveRecord::Schema.define(:version => 20130525010239) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,12 +32,11 @@ ActiveRecord::Schema.define(:version => 20130511002110) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "availabilities", :force => true do |t|
-    t.date     "date"
-    t.time     "time"
     t.boolean  "enabled"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "admin_id"
+    t.datetime "available"
   end
 
   create_table "messages", :force => true do |t|
