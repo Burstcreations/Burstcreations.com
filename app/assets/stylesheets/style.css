@@ -139,7 +139,11 @@ ul.list li {
 }
 
 ul.testimonials li {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
+}
+
+.testimonials .pull-right {
+  clear: left;
 }
 
 ol.list li {
