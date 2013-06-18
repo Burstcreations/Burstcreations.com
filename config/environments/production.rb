@@ -72,7 +72,7 @@ Burstcreations2013::Application.configure do
     :port                 => 587,
     :domain               => "burstcreations.com",
     :user_name            => "no-reply@burstcreations.com",
-    :password             => "noreply777",
+    :password             => "",
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
