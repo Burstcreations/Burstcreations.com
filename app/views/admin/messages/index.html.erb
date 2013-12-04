@@ -4,7 +4,12 @@
   <ul>
     <li>Name: <%= message.name %></li>
     <li>Email: <%= message.email %></li>
+    <li>Website: <%= message.website %></li>
     <li>Message: <%= message.message %></li>
+    <li>
+      <%= button_to "Delete", controller: "admin/messages", action: "destroy", id: message.id,
+        confirm: 'Are you sure?', method: :delete %>
+    </li>
   </ul>
 <% end %>
 

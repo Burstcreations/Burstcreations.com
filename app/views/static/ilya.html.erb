@@ -13,7 +13,16 @@
     <h2>Hello!</h2>
 
     <p class="bio">
-      My name is Ilya, and I’m a web designer/developer with a passion for solving real problems using the internet.  At fourteen, I started teaching myself HTML, and from there I’ve grown and immersed myself in other disciplines (JavaScript, Java, C#, Ruby, SQL, and more).  I have a Bachelor of Science in Computer Science from Eastern Connecticut State University, and work full-time as a Web and Mobile Mapping Developer in Boston.   If you’re a small business owner, or thinking of becoming one, I’d love to help you expand your web presence through design and development.
+      My name is Ilya, and I’m a web designer/developer with a 
+      passion for solving real problems using the internet.
+      At fourteen, I started teaching myself HTML, and from there
+      I’ve grown and immersed myself in other disciplines
+      (JavaScript, Java, C#, Ruby, SQL, and more). I have a
+      Bachelor of Science in Computer Science from 
+      Eastern Connecticut State University, and work full-time 
+      as a Web Application Developer in Boston. If you’re a
+      small business owner, or thinking of becoming one,
+      I’d love to help you expand your web presence through design and development.
     </p>
   </div>
 </div>
@@ -26,6 +35,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#projects">Previous Projects</a></li>
           <li><a href="#contact-me">Contact</a></li>
+          <li><a href="#purchase-hours">Purchase Hours</a></li>
           <li class="pull-right connect">
             <a href="https://twitter.com/burstcreations" target="_blank">
               <i class="icon-twitter"></i>
@@ -81,29 +91,83 @@
         </li>
 
         <li>
-          <a href="http://detectablewarningproducts.com/" target="_blank">Detectable Warning Products</a>
+          <a href="http://7xfit.com/" target="_blank">7xFit</a>
           <p>
-            Detectable Warning Products is a small business focused on distributing safety tiles. This is a static site, which I designed and implemented for DWP, replacing their old site.
+            For 7xFit, I customized a WooTheme to provide a responsive and clean look,
+            while integrating the existing store into the new site. 
           </p>
         </li>
       </ul>
     </section>
 
-    <section id="contact-me" class="nav-section last">
+    <section id="contact-me" class="nav-section">
       <h5>Contact Me</h5>
       <%= form_tag({:controller => "admin/messages", :action => "create"}, :method => "post", :class => "row-fluid") %>
-        <div class="span4">
-          <input class="input-block-level" type="text" name="message[name]" placeholder="Name">
-          <input class="input-block-level" type="text" name="message[email]" placeholder="Email">  
-          <input class="input-block-level" type="text" name="message[website]" placeholder="Website">
-        </div>
+        <div class="span12">
+          <input class="span4" type="text" name="message[name]" placeholder="Name (required)">
+          <input class="span4" type="text" name="message[email]" placeholder="Email (required)">  
+          <input class="span4" type="text" name="message[website]" placeholder="Website">
 
-        <div class="span8">
-          <textarea class="input-block-level" name="message[message]" placeholder="Message" rows="5"></textarea>
+          <textarea class="span8" name="message[message]" placeholder="Message (required)" rows="5"></textarea>
           <input type="hidden" name="userid" value="<%= @id %>">
-          <button class="btn btn-primary pull-right" type="submit">Send</button>
+
+          <!-- Humanizer -->
+          <input id="message_humanizer_answer" name="message[humanizer_answer]" class="span4 btn-block" type="text" placeholder="<%= @message.humanizer_question %> (required)">
+          <input id="message_humanizer_question_id" name="message[humanizer_question_id]" type="hidden" value="<%= @message.humanizer_question_id %>">
+
+          <div class="span8">
+            <button class="btn btn-primary pull-right" type="submit">Send</button>
+          </div>
         </div>        
       </form>
+    </section>
+
+    <section id="purchase-hours" class="nav-section last">
+      <h5>Purchase Hours</h5>
+
+      <p class="generous">
+       *Project pricing is different from the hour 
+        packages listed below.<br>
+        Please contact me for a project cost estimate.
+      </p>
+
+      <p>
+        Click to purchase hours for smaller tasks
+        or additional updates after project completion.
+      </p>
+
+      <!-- 1 Hour PayPal Button -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="TSSDBFZRD9NEA">
+        <input type="submit" name="submit" value="1 Hour - $50" class="btn btn-primary"/>
+      </form>
+      
+      <!-- 5 Hour PayPal Button -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="55QPAYPJJRZXY">
+        <input type="submit" name="submit" value="5 Hours - $225 ($45 per hour)" class="btn btn-primary"/>
+      </form>
+      
+      <!-- 10 Hour PayPal Button -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="XDNXTGTC432QW">
+        <input type="submit" name="submit" value="10 Hours - $420 ($42 per hour)" class="btn btn-primary"/>
+      </form>
+
+      <!-- 20 Hour PayPal Button -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="76MBZDZ3A4C7U">
+        <input type="submit" name="submit" value="20 Hours - $800 ($40 per hour)" class="btn btn-primary"/>
+      </form>
+
+      <p>*Hours expire one year from date of purchase.</p>
+      <p class="more">
+        **When considering pricing, please keep in mind that one of the benefits of hiring a freelancer is that you are relieved of the burden of paying taxes, health insurance, or office expenses for an employee. These items are accounted for in the prices above.
+      </p>
     </section>
   </div>
 </div>

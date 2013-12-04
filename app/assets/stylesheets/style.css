@@ -111,6 +111,11 @@ nav .title {
   border-radius: 0;
 }
 
+#contact-me input,
+#contact-me textarea {
+  display: block;
+}
+
 .offset-half {
   margin-left: 5%;
 }
@@ -170,7 +175,7 @@ ul.nal li {
 }
 
 #bio {
-    padding-top: 3em;
+  padding-top: 3em;
 }
 
 .auth-widget {
@@ -183,4 +188,8 @@ ul.nal li {
 .alert {
   margin: 0 auto;
   width: 60%;
+}
+
+p.generous {
+  margin: 1em 0;
 }

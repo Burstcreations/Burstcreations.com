@@ -1,5 +1,10 @@
 class Message < ActiveRecord::Base
-  attr_accessible :date_sent, :email, :message, :name, :prefered_consultation_time, :schedule_consultation, :website
+  include Humanizer
+  attr_accessible :date_sent, :email, :message, :name, 
+    :prefered_consultation_time, :schedule_consultation, :website,
+    :humanizer_answer, :humanizer_question_id
+
+  require_human_on :save
 
   validates :name, :presence => true
   validates :email, :presence => true

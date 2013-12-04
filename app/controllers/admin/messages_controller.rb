@@ -10,6 +10,10 @@ class Admin::MessagesController < ApplicationController
     end
   end
 
+  def show
+    @message = current_admin.message.find(params[:id])
+  end
+
   def new
   end
 
@@ -17,13 +21,26 @@ class Admin::MessagesController < ApplicationController
     @admin = Admin.find(params[:userid])
     @message = @admin.messages.create(params[:message])
 
-    if @message.save
-      MessageMailer.message_email(@admin, @message).deliver
-      flash[:notice] = "Message sent successfully! Thank you!"
+    if @message.humanizer_correct_answer?
+      if @message.save
+        MessageMailer.message_email(@admin, @message).deliver
+        flash[:notice] = "Message sent successfully! Thank you!"
+      else
+        flash[:error] = "Unable to send your message."
+      end        
     else
-      flash[:error] = "Unable to send your message."
+      flash[:error] = "You answered the question incorrectly, please try again."
     end
 
     redirect_to :back
+  end
+
+  def destroy
+    @message = current_admin.messages.find(params[:id])
+
+    if @message
+      @message.destroy
+      redirect_to :back
+    end
   end
 end
