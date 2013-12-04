@@ -10,6 +10,7 @@ gem 'devise'
 gem 'therubyracer', :require => 'v8'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'jquery-rails'
+gem 'humanizer'
 
 group :development do
   gem 'debugger'
