@@ -3,7 +3,9 @@ Burstcreations.com
 
 Simple portfolio/services site for [Burstcreations.com][1].
 
-## Setup for Development
+## Setup 
+
+### Development
 
 Ubuntu:
 ```bash
@@ -21,5 +23,21 @@ bundle exec rails console
 bundle exec rails server
 # Open http://0.0.0.0:3000 in browser
 ```
+
+### Production
+
+Ubuntu:
+```
+# commit the bundle packages
+bundle package
+
+# on server
+# might have to do `git clean -fxd` to clean out old stuff first
+bundle install --without development
+bundle exec rake assets:precompile
+bundle exec rails console production
+Admin.create!(:email => 'users@email.here', :password => 'your_password')
+touch tmp/restart.txt
+
 
 [1]: http://burstcreations.com
