@@ -1,6 +1,0 @@
-<%= form_for @availability, :url => { :action => "create" } do |f| %>
-  <%= datetime_select(:availability, :available) %>
-  <%= f.label :enabled,  {:value => "Enabled", :class => "inline"} %>
-  <%= f.check_box :enabled, {:checked => true, :class => "input-block-level"} %>
-  <%= f.submit "Create", :class => "btn btn-primary"%>
-<% end %>

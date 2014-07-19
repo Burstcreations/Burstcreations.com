@@ -1,9 +1,0 @@
-<h1>Availability</h1>
-<%= link_to 'New', new_admin_availability_path %>
-
-<% @availabilities.each do |availability| %>
-  <ul>
-    <li>Available: <%= availability.available %></li>
-    <li>Enabled: <%= availability.enabled %></li>
-  </ul>
-<% end %>

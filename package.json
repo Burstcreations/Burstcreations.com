@@ -1,0 +1,27 @@
+{
+  "name": "Burstcreations.com",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Burstcreations/Burstcreations.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Burstcreations/Burstcreations.com/issues"
+  },
+  "homepage": "https://github.com/Burstcreations/Burstcreations.com",
+  "devDependencies": {
+    "prova": "^1.14.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "express": "^4.6.1"
+  }
+}
