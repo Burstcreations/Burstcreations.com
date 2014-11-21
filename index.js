@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var express = require('express');
 var ghost = require('ghost');
 var chalk = require('chalk');
@@ -10,18 +11,9 @@ var env = process.env.NODE_ENV || 'development';
 app.use('/', express.static('./static'));
 
 ghost({
-  config: {
-    production: {
-      url: 'http://burstcreations.com/blog',
-      server: {
-        port: port
-      },
-      paths: {
-        subdir: '/blog'
-      }
-    }
-  }
+  config: path.join(__dirname, 'config.js')
 }).then(function (ghostServer) {
+  console.log(ghostServer.config);
   app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
 
   ghostServer.start(app);
