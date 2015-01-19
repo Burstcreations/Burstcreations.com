@@ -23,6 +23,6 @@
   "dependencies": {
     "chalk": "^0.5.1",
     "express": "^4.6.1",
-    "ghost": "^0.5.5"
+    "ghost": "^0.5.8"
   }
 }
